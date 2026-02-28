@@ -1,0 +1,134 @@
+<section class="page-hero hero-slim">
+  <div class="container d-flex flex-column flex-lg-row justify-content-between gap-3">
+    <div>
+      <span class="eyebrow">Admin Dashboard</span>
+      <h1>Contact inquiries</h1>
+      <p class="lead">Review and manage guest messages from the website.</p>
+    </div>
+    <button class="btn btn-primary align-self-start" (click)="logout()">Logout</button>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="stats-grid" *ngIf="messages$ | async as messages">
+      <div class="stat-card">
+        <span>Total</span>
+        <strong>{{ messages.length }}</strong>
+      </div>
+      <div class="stat-card">
+        <span>Total Visits</span>
+        <strong>{{ (totalVisits$ | async) ?? 0 }}</strong>
+      </div>
+      <div class="stat-card">
+        <span>New</span>
+        <strong>{{ getStatusCount(messages, 'new') }}</strong>
+      </div>
+      <div class="stat-card">
+        <span>Reviewed</span>
+        <strong>{{ getStatusCount(messages, 'reviewed') }}</strong>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6">
+        <div class="card chart-card h-100">
+          <h6>Website visits (last 7 days)</h6>
+          <canvas #visitsChart></canvas>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card chart-card h-100">
+          <h6>Contact requests (last 7 days)</h6>
+          <canvas #contactsChart></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4 mb-4">
+      <div class="col-lg-4">
+        <div class="card chart-card h-100">
+          <h6>Contact status</h6>
+          <canvas #statusChart></canvas>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card chart-card h-100">
+          <h6>Contacts by weekday</h6>
+          <canvas #weekdayChart></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="filter-bar">
+      <button class="btn btn-sm" [class.btn-primary]="filter === 'all'" (click)="setFilter('all')">
+        All
+      </button>
+      <button class="btn btn-sm" [class.btn-primary]="filter === 'new'" (click)="setFilter('new')">
+        New
+      </button>
+      <button
+        class="btn btn-sm"
+        [class.btn-primary]="filter === 'reviewed'"
+        (click)="setFilter('reviewed')"
+      >
+        Reviewed
+      </button>
+    </div>
+
+    <div class="card admin-table">
+      <div class="table-responsive">
+        <table class="table align-middle mb-0">
+          <thead>
+            <tr>
+              <th>Guest</th>
+              <th>Contact</th>
+              <th>Message</th>
+              <th>Submitted</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let message of (messages$ | async) ?? []"
+              [class.d-none]="filter !== 'all' && message.status !== filter"
+            >
+              <td>
+                <strong>{{ message.name }}</strong>
+                <div class="text-muted small">{{ message.email }}</div>
+              </td>
+              <td>
+                <div>{{ message.phone }}</div>
+                <div class="text-muted small" *ngIf="message.dates">Dates: {{ message.dates }}</div>
+              </td>
+              <td class="message-cell">{{ message.message }}</td>
+              <td>{{ formatDate(message.createdAt) }}</td>
+              <td>
+                <span
+                  class="badge"
+                  [class.bg-warning-subtle]="message.status === 'new'"
+                  [class.text-warning]="message.status === 'new'"
+                  [class.bg-success-subtle]="message.status === 'reviewed'"
+                  [class.text-success]="message.status === 'reviewed'"
+                >
+                  {{ message.status ?? 'new' }}
+                </span>
+              </td>
+              <td>
+                <button
+                  class="btn btn-sm btn-outline-primary"
+                  (click)="markReviewed(message)"
+                  [disabled]="message.status === 'reviewed'"
+                >
+                  Mark Reviewed
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="empty-state" *ngIf="(messages$ | async)?.length === 0">
+          No messages yet. New inquiries will appear here.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+.navbar-shadow {
+  box-shadow: 0 12px 30px rgba(21, 24, 34, 0.08);
+}
+
+.navbar-brand .brand-mark {
+  background: var(--primary-gradient);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.55rem;
+  letter-spacing: 0.08em;
+}
+
+.navbar-brand .brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-size: 0.95rem;
+}
+
+.navbar-brand .brand-text small {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-base);
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.mobile-offcanvas {
+  width: min(82vw, 320px);
+}
+
+.mobile-offcanvas .nav-link {
+  font-weight: 600;
+}

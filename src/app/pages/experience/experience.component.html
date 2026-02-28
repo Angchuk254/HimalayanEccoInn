@@ -1,0 +1,52 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Experience</span>
+    <h1>Crafted moments inspired by Ladakh.</h1>
+    <p class="lead">
+      From soulful dining to outdoor adventures, explore curated experiences that bring
+      the Himalayas closer.
+    </p>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Signature Experiences</span>
+      <h2>Handpicked moments across Leh and the Himalayas.</h2>
+      <p>Balanced itineraries that blend culture, wellness, and outdoor adventure.</p>
+    </div>
+    <div class="row g-4 experience-scroll" #experienceScroll>
+      <div class="col-10 col-sm-7 col-md-6 col-lg-3 experience-item" *ngFor="let item of experienceList">
+        <div class="card p-2 experience-card h-100">
+          <div class="icon-wrap">
+            <i [ngClass]="['bi', item.icon]"></i>
+          </div>
+          <h5>{{ item.title }}</h5>
+          <p class="text-muted">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Curated Journeys</span>
+      <h2>Choose a theme that matches your travel style.</h2>
+      <p>From culinary discoveries to scenic drives, every journey feels personal.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4" *ngFor="let card of categories">
+        <div class="card experience-detail h-100">
+          <img [src]="card.image" [alt]="card.title" />
+          <div class="card-body">
+            <h5>{{ card.title }}</h5>
+            <p class="text-muted">{{ card.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

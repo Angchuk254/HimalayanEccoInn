@@ -1,0 +1,144 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h1>Plan your stay with our concierge team.</h1>
+    <p class="lead">
+      Share your travel dates, preferences, and questions. We will curate the perfect
+      Himalayan experience for you.
+    </p>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <div class="contact-card mb-4">
+          <h4>Reach us directly</h4>
+          <p class="text-muted">
+            Our team is ready to assist with stays, transportation, and customized
+            itineraries.
+          </p>
+          <div class="contact-info">
+            <div>
+              <span>Phone</span>
+              <strong>+91 60060 24435</strong>
+            </div>
+            <div>
+              <span>Email</span>
+              <strong>info&#64;himalayanecoinn.com
+              </strong>
+            </div>
+            <div>
+              <span>Address</span>
+              <strong>Upper Tukcha Rd, near GH road, Leh, Ladakh 194101</strong>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <div class="col-lg-7">
+        <form class="card contact-form" [formGroup]="contactForm" (ngSubmit)="submit()">
+          <h4>Send a request</h4>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" formControlName="name" placeholder="Your name" />
+              <small class="text-danger" *ngIf="submitted && contactForm.get('name')?.invalid">
+                Please enter your name.
+              </small>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" formControlName="email" placeholder="you@email.com" />
+              <small class="text-danger" *ngIf="submitted && contactForm.get('email')?.invalid">
+                <span *ngIf="contactForm.get('email')?.errors?.['required']">Email is required.</span>
+                <span *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email.</span>
+              </small>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone Number</label>
+              <input
+                type="tel"
+                class="form-control"
+                formControlName="phone"
+                placeholder="+91 60060 24435"
+                inputmode="tel"
+              />
+              <small class="text-danger" *ngIf="submitted && contactForm.get('phone')?.invalid">
+                <span *ngIf="contactForm.get('phone')?.errors?.['required']">Phone number is required.</span>
+                <span *ngIf="contactForm.get('phone')?.errors?.['pattern']">
+                  Please enter a valid phone number.
+                </span>
+              </small>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Preferred Dates</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="dates"
+                placeholder="April 10 - April 15"
+              />
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message</label>
+              <textarea
+                rows="4"
+                class="form-control"
+                formControlName="message"
+                placeholder="Tell us about your travel plans"
+              ></textarea>
+              <small class="text-danger" *ngIf="submitted && contactForm.get('message')?.invalid">
+                Please add a short message.
+              </small>
+            </div>
+          </div>
+          <div class="mt-3 d-flex align-items-center gap-3">
+            <button class="btn btn-primary" [disabled]="isLoading" type="submit">
+              {{ isLoading ? 'Sending...' : 'Submit Request' }}
+            </button>
+            <span class="text-success" *ngIf="successMessage">
+              Thank you! Our team will reach out shortly.
+            </span>
+            <span class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row g-4 mt-4 justify-content-between align-items-center align-items-stretch">
+      <div class="map-card col-12 col-md-7 ">
+        <h5>Find us on the map</h5>
+        <p class="text-muted">Leh, Ladakh • Himalayan Eco Inn</p>
+        <div class="map-frame">
+          <iframe
+            title="Himalayan Eco Inn map"
+            src="https://www.google.com/maps?q=Himalayan%20Eco%20Inn%20Leh%20Ladakh&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <a
+          class="btn btn-outline-primary mt-3"
+          href="https://maps.app.goo.gl/5tjZZ9pU2761GAq68"
+          target="_blank"
+          rel="noopener"
+        >
+          Open in Google Maps
+        </a>
+      </div>
+      <div class="recommendation-card  col-12 col-md-4">
+        <h5>Recommended rooms</h5>
+        <div class="recommendation-list">
+          <a class="recommendation-item" *ngFor="let room of recommendedRooms" routerLink="/rooms">
+            <img [src]="room.image" [alt]="room.name" />
+            <div>
+              <h6>{{ room.name }}</h6>
+              <p class="text-muted">{{ room.view }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+     </div>
+  </div>
+</section>

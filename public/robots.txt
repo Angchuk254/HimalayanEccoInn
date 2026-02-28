@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://himalayanecoinn.com/sitemap.xml

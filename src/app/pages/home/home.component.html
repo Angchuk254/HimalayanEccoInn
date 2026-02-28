@@ -1,0 +1,307 @@
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <span class="eyebrow">Leh, Ladakh</span>
+        <h1 class="text-white">Elevate your stay in the heart of the Himalayas.</h1>
+        <p class="lead">
+          Himalayan Eco Inn blends eco-conscious luxury with curated Himalayan experiences,
+          crafted for comfort, calm, and discovery.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" routerLink="/experience">Explore Experiences</a>
+          <a class="btn btn-outline-light btn-lg" routerLink="/rooms">View Rooms</a>
+        </div>
+        <div class="hero-highlights">
+          <div class="highlight-card" *ngFor="let item of highlights">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>{{ item }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-media">
+          <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="assets/eco-inne-hotel.jpg"
+                  alt="Himalayan Eco Inn exterior"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/eco-inn-dine.jpg"
+                  alt="Himalayan Eco Inn suite"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/eco-inn-room.jpg"
+                  alt="Himalayan Eco Inn landscape"
+                />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="hero-badge">
+            <strong>4.9</strong>
+            <span>Guest Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <div class="section-heading">
+          <span class="eyebrow">Leh Ladakh Stay</span>
+          <h2>Luxury hotel and homestay-style comfort in Leh, Ladakh.</h2>
+          <p>
+            Himalayan Eco Inn is a boutique hotel in Leh designed for travelers searching
+            for serene rooms, warm hospitality, and memorable Himalayan views. Whether you
+            call it a hotel, room stay, or a homestay in Ladakh, our team curates every
+            detail for a restful mountain escape.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-outline-primary" routerLink="/rooms">Explore Rooms</a>
+            <a class="btn btn-primary" routerLink="/contact">Book Your Stay</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <img
+          class="img-fluid rounded-4 shadow"
+          src="assets/room-eco-inn.jpg"
+          alt="Himalayan Eco Inn hotel in Leh Ladakh"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Our Story</span>
+      <h2>Rooted in Ladakh, refined for modern comfort.</h2>
+      <p>Every detail blends local heritage with calm, contemporary design.</p>
+    </div>
+    <div class="timeline-grid">
+      <div class="timeline-card" *ngFor="let step of timeline">
+        <div class="timeline-dot"></div>
+        <div>
+          <h5>{{ step.title }}</h5>
+          <p class="text-muted mb-0">{{ step.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Experience</span>
+      <h2>Immersive moments designed for modern explorers.</h2>
+      <p>From local cuisine to stargazing nights, every detail tells a Ladakhi story.</p>
+    </div>
+    <div class="row g-4 experience-scroll" #experienceScroll>
+      <div class="col-10  col-sm-7 col-md-6 col-lg-3 experience-item" *ngFor="let item of experienceList">
+        <div class="card p-2 experience-card h-100">
+          <div class="icon-wrap">
+            <i [ngClass]="['bi', item.icon]"></i>
+          </div>
+          <h5>{{ item.title }}</h5>
+          <p class="text-muted">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Rooms & Suites</span>
+      <h2>Comfortable spaces with Himalayan calm.</h2>
+      <p>Thoughtfully designed rooms with eco materials and modern amenities.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let room of rooms">
+        <div class="card room-card h-100">
+          <img [src]="room.image" [alt]="room.name" />
+          <div class="card-body">
+            <div class="d-flex align-items-start justify-content-between gap-2">
+              <div>
+                <h5>{{ room.name }}</h5>
+                <p class="text-muted mb-2">{{ room.view }} • {{ room.size }}</p>
+              </div>
+              <span class="price-tag">{{ room.price }}</span>
+            </div>
+            <ul class="list-unstyled amenity-list">
+              <li *ngFor="let amenity of room.amenities">
+                <i class="bi bi-check-circle-fill"></i>{{ amenity }}
+              </li>
+            </ul>
+            <a class="btn btn-outline-primary w-100" routerLink="/rooms">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Gallery</span>
+      <h2>Scenes from Himalayan Eco Inn.</h2>
+      <p>Explore the calm interiors, dining spaces, and mountain views.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" *ngFor="let item of galleryPreview">
+        <div class="card gallery-card h-100">
+          <img [src]="item.image" [alt]="item.title" />
+          <div class="card-body">
+            <h6>{{ item.title }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <a class="btn btn-outline-primary" routerLink="/gallery">View full gallery</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Guest Reviews</span>
+      <h2>What our guests are saying.</h2>
+      <p>Real stories from travelers who stayed with us in Leh.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let review of testimonialList">
+        <div class="card testimonial-card h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <h6>{{ review.name }}</h6>
+            <span class="badge bg-primary-subtle text-primary">{{ review.rating }}</span>
+          </div>
+          <p class="text-muted mb-2">{{ review.location }}</p>
+          <p class="quote">“{{ review.quote }}”</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <a class="btn btn-outline-primary" routerLink="/reviews">Read more reviews</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">FAQ</span>
+      <h2>Answers to common questions.</h2>
+      <p>Quick details on bookings, stay policies, and services.</p>
+    </div>
+    <div class="accordion" id="homeFaq">
+      <div class="accordion-item" *ngFor="let faq of faqList; let idx = index">
+        <h2 class="accordion-header" [id]="'faqHeading' + idx">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            [attr.data-bs-target]="'#faqCollapse' + idx"
+            [attr.aria-controls]="'faqCollapse' + idx"
+          >
+            {{ faq.question }}
+          </button>
+        </h2>
+        <div
+          class="accordion-collapse collapse"
+          [id]="'faqCollapse' + idx"
+          [attr.aria-labelledby]="'faqHeading' + idx"
+          data-bs-parent="#homeFaq"
+        >
+          <div class="accordion-body text-muted">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <a class="btn btn-outline-primary" routerLink="/faq">View all FAQs</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-card" *ngFor="let badge of badges">
+        <div class="trust-icon">
+          <i class="bi" [ngClass]="badge.icon"></i>
+        </div>
+        <div>
+          <h6>{{ badge.title }}</h6>
+          <p class="text-muted mb-0">{{ badge.detail }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Book on Partners</span>
+      <h2>Prefer a trusted marketplace?</h2>
+      <p>Use our official listings below. You will be redirected to partner sites.</p>
+    </div>
+    <div class="partner-grid">
+      <a
+        class="partner-card"
+        *ngFor="let partner of partners"
+        [href]="partner.url"
+        target="_blank"
+        rel="noopener"
+      >
+        <div>
+          <h6>{{ partner.name }}</h6>
+          <p class="text-muted mb-0">{{ partner.note }}</p>
+        </div>
+        <span class="partner-cta">Visit</span>
+      </a>
+    </div>
+    <p class="partner-disclaimer text-muted mb-0">
+      Disclaimer: Booking is subject to partner terms and availability. We do not control external pricing.
+    </p>
+  </div>
+</section>
+
+<section class="section-spacing bg-cta">
+  <div class="container">
+    <div class="cta-card">
+      <div>
+        <span class="eyebrow">Stay With Us</span>
+        <h2>Plan your eco-luxury escape in Ladakh.</h2>
+        <p>Connect with our concierge to design a stay that matches your pace.</p>
+      </div>
+      <a class="btn btn-light btn-lg" routerLink="/contact">Contact Concierge</a>
+    </div>
+  </div>
+</section>

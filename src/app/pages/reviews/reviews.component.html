@@ -1,0 +1,54 @@
+<section class="page-hero hero-slim">
+  <div class="container">
+    <span class="eyebrow">Guest Reviews</span>
+    <h1>Real stories from Himalayan Eco Inn.</h1>
+    <p class="lead">
+      Hear directly from travelers who experienced Ladakh with us.
+    </p>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Highlights</span>
+      <h2>Why guests keep coming back.</h2>
+      <p>Consistent service and calm spaces define the Himalayan Eco Inn experience.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let item of highlights">
+        <div class="card review-highlight h-100">
+          <div class="card-body">
+            <h5>{{ item.title }}</h5>
+            <p class="text-muted mb-0">{{ item.detail }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Guest Voices</span>
+      <h2>Comfort, culture, and curated moments.</h2>
+      <p>Here is what our guests loved the most about their stay.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let review of reviews">
+        <div class="card testimonial-card h-100">
+          <div class="d-flex align-items-center justify-content-between">
+            <h6>{{ review.name }}</h6>
+            <span class="badge bg-primary-subtle text-primary">{{ review.rating }}</span>
+          </div>
+          <p class="text-muted mb-2">{{ review.location }}</p>
+          <p class="quote">“{{ review.quote }}”</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <a class="btn btn-primary" routerLink="/contact">Plan your stay</a>
+    </div>
+  </div>
+</section>

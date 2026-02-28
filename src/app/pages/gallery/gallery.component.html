@@ -1,0 +1,42 @@
+<section class="page-hero hero-slim">
+  <div class="container">
+    <span class="eyebrow">Gallery</span>
+    <h1>Moments from Himalayan Eco Inn.</h1>
+    <p class="lead">
+      A glimpse into our spaces, mountain vistas, and the thoughtful details that define every stay.
+    </p>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Signature Spaces</span>
+      <h2>Designed for calm, light, and Ladakhi views.</h2>
+      <p>Each corner is curated for comfort, with sustainable finishes and warm Himalayan tones.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-4" *ngFor="let item of items">
+        <div class="card gallery-card h-100">
+          <img [src]="item.image" [alt]="item.title" />
+          <div class="card-body">
+            <h6>{{ item.title }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="cta-card">
+      <div>
+        <span class="eyebrow text-white">Plan Your Stay</span>
+        <h2>Make the mountains your home base.</h2>
+        <p>Reach out for curated itineraries, seasonal offers, and personalized experiences.</p>
+      </div>
+      <a class="btn btn-light btn-lg" routerLink="/contact">Connect with us</a>
+    </div>
+  </div>
+</section>

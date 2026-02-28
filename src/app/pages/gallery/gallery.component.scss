@@ -1,0 +1,14 @@
+.gallery-card {
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(15, 26, 43, 0.12);
+}
+
+.gallery-card img {
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.04);
+}

@@ -1,0 +1,74 @@
+<section class="page-hero hero-slim">
+  <div class="container">
+    <span class="eyebrow">Nearby Places</span>
+    <h1>Explore Leh and Ladakh around Himalayan Eco Inn.</h1>
+    <p class="lead">
+      From monasteries to cozy restaurants, discover handpicked spots to enrich your stay.
+    </p>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Local Favorites</span>
+      <h2>Curated picks for culture, views, and local flavors.</h2>
+      <p>Ask our concierge to arrange transport, guides, or custom itineraries.</p>
+    </div>
+
+    <div class="filter-row">
+      <button
+        class="btn btn-outline-primary btn-sm"
+        *ngFor="let category of categories"
+        [ngClass]="{ 'active-filter': activeCategory === category }"
+        (click)="setCategory(category)"
+      >
+        {{ category }}
+      </button>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let place of filteredPlaces">
+        <div class="card place-card h-100">
+          <div class="card-body">
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <div>
+                <h5>{{ place.name }}</h5>
+                <span class="badge bg-primary-subtle text-primary">{{ place.category }}</span>
+              </div>
+              <span class="distance">{{ place.distance }}</span>
+            </div>
+            <p class="text-muted mb-3">{{ place.summary }}</p>
+            <div class="tip">
+              <i class="bi bi-lightbulb-fill"></i>
+              <span>{{ place.tip }}</span>
+            </div>
+            <div class="mt-3">
+              <a
+                class="btn btn-outline-primary btn-sm"
+                [href]="place.mapUrl"
+                target="_blank"
+                rel="noopener"
+              >
+                Open in Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="cta-card">
+      <div>
+        <span class="eyebrow text-white">Plan a Day Out</span>
+        <h2>Let us tailor a sightseeing plan for you.</h2>
+        <p>Tell us your interests and we will map a perfect local itinerary.</p>
+      </div>
+      <a class="btn btn-light btn-lg" routerLink="/contact">Request a local guide</a>
+    </div>
+  </div>
+</section>

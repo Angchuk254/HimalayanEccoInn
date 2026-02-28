@@ -1,0 +1,80 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Rooms & Amenities</span>
+    <h1>Comfortable spaces with Himalayan serenity.</h1>
+    <p class="lead">
+      Choose from spacious rooms and suites designed for rest, rejuvenation, and
+      breathtaking views.
+    </p>
+  <p>
+    Looking for hotel rooms in Leh or a peaceful homestay in Ladakh? Our rooms combine
+    boutique hospitality with modern comforts for a calm stay in the heart of Leh.
+    <a routerLink="/contact">Contact us</a> to book your dates.
+  </p>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Suites & Rooms</span>
+      <h2>Modern interiors inspired by Ladakhi warmth.</h2>
+      <p>Every room balances airy layouts, smart amenities, and serene mountain views.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4" *ngFor="let room of rooms">
+        <div class="card room-card h-100">
+          <img [src]="room.image" [alt]="room.name" />
+          <div class="card-body">
+            <h5>{{ room.name }}</h5>
+            <p class="text-muted mb-2">{{ room.view }} • {{ room.size }}</p>
+            <span class="price-tag">{{ room.price }}</span>
+            <h6 class="mt-3">Amenities</h6>
+            <ul class="list-unstyled amenity-list">
+              <li *ngFor="let amenity of room.amenities">
+                <i class="bi bi-check-circle-fill"></i>{{ amenity }}
+              </li>
+            </ul>
+            <h6>Room features</h6>
+            <ul class="list-unstyled amenity-list">
+              <li *ngFor="let feature of room.features">
+                <i class="bi bi-star-fill"></i>{{ feature }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">In-Room Comfort</span>
+      <h2>Signature amenities in every category.</h2>
+      <p>Enjoy thoughtful essentials designed to support rest, work, and relaxation.</p>
+    </div>
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h2>Standard amenities for every stay</h2>
+        <p class="text-muted">
+          We maintain consistent comfort, premium essentials, and eco-friendly details
+          across every room category.
+        </p>
+        <ul class="list-unstyled amenity-list">
+          <li *ngFor="let item of amenities">
+            <i class="bi bi-check-circle-fill"></i>{{ item }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <img
+          class="img-fluid rounded-4 shadow-soft"
+          src="assets/eco-inne-view-room.jpg"
+          alt="Room interior Himalayan Eco Inn"
+        />
+      </div>
+    </div>
+  </div>
+</section>

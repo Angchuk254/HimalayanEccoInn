@@ -1,0 +1,37 @@
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.filter-row .btn {
+  border-radius: 999px;
+}
+
+.filter-row .active-filter {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.place-card {
+  box-shadow: 0 14px 32px rgba(15, 26, 43, 0.12);
+}
+
+.place-card .distance {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.place-card .tip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+}
+
+.place-card .tip i {
+  color: var(--primary);
+}
+

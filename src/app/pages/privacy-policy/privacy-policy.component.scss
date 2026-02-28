@@ -1,0 +1,14 @@
+.content-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 12px 30px rgba(15, 26, 43, 0.08);
+}
+
+.content-card h4 {
+  margin-top: 1.5rem;
+}
+
+.content-card h4:first-child {
+  margin-top: 0;
+}

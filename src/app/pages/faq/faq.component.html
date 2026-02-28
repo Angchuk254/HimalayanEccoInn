@@ -1,0 +1,67 @@
+<section class="page-hero hero-slim">
+  <div class="container">
+    <span class="eyebrow">FAQ</span>
+    <h1>Quick answers for a seamless stay.</h1>
+    <p class="lead">
+      Everything you need to know about bookings, services, and travel planning in Leh.
+    </p>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Stay Essentials</span>
+      <h2>Planning details made easy.</h2>
+      <p>Reach out anytime if your question is not covered here.</p>
+    </div>
+    <div class="accordion" id="faqList">
+      <div class="accordion-item" *ngFor="let faq of faqList; let idx = index">
+        <h2 class="accordion-header" [id]="'faqHeading' + idx">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            [attr.data-bs-target]="'#faqCollapse' + idx"
+            [attr.aria-controls]="'faqCollapse' + idx"
+          >
+            {{ faq.question }}
+          </button>
+        </h2>
+        <div
+          class="accordion-collapse collapse"
+          [id]="'faqCollapse' + idx"
+          [attr.aria-labelledby]="'faqHeading' + idx"
+          data-bs-parent="#faqList"
+        >
+          <div class="accordion-body text-muted">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Travel Tips</span>
+      <h2>Helpful guidance for your Ladakh journey.</h2>
+      <p>Plan ahead and make the most of your mountain escape.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let tip of travelTips">
+        <div class="card tip-card h-100">
+          <div class="card-body">
+            <h5>{{ tip.title }}</h5>
+            <p class="text-muted mb-0">{{ tip.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <a class="btn btn-primary" routerLink="/contact">Ask our concierge</a>
+    </div>
+  </div>
+</section>

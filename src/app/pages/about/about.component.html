@@ -1,0 +1,115 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">About Us</span>
+    <h1>Himalayan Eco Inn is a serene retreat in Leh.</h1>
+    <p class="lead">
+      Rooted in Ladakh's heritage and guided by sustainable luxury, we create warm,
+      contemporary stays that celebrate the mountains.
+    </p>
+  <p>
+    As a boutique hotel in Leh, Himalayan Eco Inn offers a homestay-style experience
+    with curated service, modern rooms, and the tranquility of Ladakh.
+  </p>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <img
+          class="img-fluid rounded-4 shadow-soft"
+          src="assets/eco-inne-hotel.jpg"
+          alt="Himalayan Eco Inn exterior"
+        />
+      </div>
+      <div class="col-lg-6">
+        <h2>Designed with nature, crafted for comfort.</h2>
+        <p class="text-muted">
+          Our boutique hotel blends local materials with modern design to create a
+          peaceful sanctuary. From panoramic lounges to curated culinary journeys, every
+          element is built for mindful hospitality.
+        </p>
+        <div class="value-grid">
+          <div class="value-card" *ngFor="let value of values">
+            <div class="value-icon">
+              <i class="bi" [ngClass]="value.icon"></i>
+            </div>
+            <h6>{{ value.title }}</h6>
+            <p class="text-muted">{{ value.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Signature Moments</span>
+      <h2>Thoughtful details that make every stay memorable.</h2>
+      <p>We curate a seamless rhythm across mornings, afternoons, and evenings.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let moment of signatureMoments">
+        <div class="card moment-card h-100">
+          <div class="card-body">
+            <div class="moment-icon">
+              <i class="bi" [ngClass]="moment.icon"></i>
+            </div>
+            <h5>{{ moment.title }}</h5>
+            <p class="text-muted mb-0">{{ moment.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacing bg-soft">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-5">
+        <h3>Why guests love us</h3>
+        <p class="text-muted">
+          A seamless blend of local warmth, eco-conscious practices, and contemporary
+          service. We offer personalized itineraries, curated cuisine, and panoramic
+          views across Leh valley.
+        </p>
+        <ul class="list-unstyled detail-list">
+          <li><i class="bi bi-check-circle-fill"></i> 24/7 concierge & travel assistance</li>
+          <li><i class="bi bi-check-circle-fill"></i> High-speed Wi-Fi and workspace</li>
+          <li><i class="bi bi-check-circle-fill"></i> Organic breakfast & dining lounge</li>
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <div class="stats-card">
+          <div>
+            <h2>15</h2>
+            <span>Premium rooms & suites</span>
+          </div>
+          <div>
+            <h2>1500m</h2>
+            <span>To Shanti Stupa view deck</span>
+          </div>
+          <div>
+            <h2>12+</h2>
+            <span>Curated experiences</span>
+          </div>
+        </div>
+        <div class="highlight-grid">
+          <div class="highlight-card" *ngFor="let item of highlights">
+            <div class="highlight-icon">
+              <i class="bi" [ngClass]="item.icon"></i>
+            </div>
+            <div>
+              <h6>{{ item.label }}</h6>
+              <p class="text-muted mb-0">{{ item.detail }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -32,6 +32,7 @@ yarn-error.log
 .env
 .env.local
 .env.*.local
+src/environments/environment*.ts
 
 # Miscellaneous
 /.angular/cache

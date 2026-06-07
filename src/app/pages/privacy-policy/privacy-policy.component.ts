@@ -14,5 +14,9 @@ export class PrivacyPolicyComponent {
         'Read how Himalayan Eco Inn collects, uses, and protects your personal information.',
       keywords: 'Himalayan Eco Inn privacy policy, Leh Ladakh hotel privacy, data protection'
     });
+    this.seo.injectBreadcrumb([
+      { name: 'Home', url: 'https://himalayanecoinn.com/' },
+      { name: 'Privacy Policy', url: 'https://himalayanecoinn.com/privacy-policy' }
+    ]);
   }
 }

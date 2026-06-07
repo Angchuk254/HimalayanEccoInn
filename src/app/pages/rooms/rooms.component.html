@@ -24,7 +24,7 @@
     <div class="row g-4">
       <div class="col-lg-4" *ngFor="let room of rooms">
         <div class="card room-card h-100">
-          <img [src]="room.image" [alt]="room.name" />
+          <img [src]="room.image" [alt]="room.name" width="360" height="270" loading="lazy" />
           <div class="card-body">
             <h5>{{ room.name }}</h5>
             <p class="text-muted mb-2">{{ room.view }} • {{ room.size }}</p>
@@ -73,6 +73,9 @@
           class="img-fluid rounded-4 shadow-soft"
           src="assets/eco-inne-view-room.jpg"
           alt="Room interior Himalayan Eco Inn"
+          width="500"
+          height="375"
+          loading="lazy"
         />
       </div>
     </div>

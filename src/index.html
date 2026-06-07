@@ -26,14 +26,68 @@
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="icon" type="image/x-icon" href="assets/titleIcon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="theme-color" content="#2d5a8e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Himalayan Eco Inn">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Hotel",
+      "@type": ["Hotel", "LodgingBusiness"],
       "name": "Himalayan Eco Inn",
       "url": "https://himalayanecoinn.com/",
       "image": "https://himalayanecoinn.com/assets/hotel-eco-inn.jpg",
-      "description": "Himalayan Eco Inn is a luxury hotel and homestay in Leh, Ladakh offering elegant rooms and curated experiences.",
+      "description": "Himalayan Eco Inn is a luxury eco-hotel and homestay in Leh, Ladakh offering elegant rooms, curated Ladakh tours, Leh sightseeing, and unforgettable mountain experiences.",
+      "priceRange": "₹₹₹",
+      "starRating": { "@type": "Rating", "ratingValue": "4" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "120",
+        "bestRating": "5"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Upper Tukcha Rd, near GH road",
+        "addressLocality": "Leh",
+        "addressRegion": "Ladakh",
+        "postalCode": "194101",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.1526",
+        "longitude": "77.5771"
+      },
+      "telephone": "+91-60060-24435",
+      "email": "info@himalayanecoinn.com",
+      "checkinTime": "14:00",
+      "checkoutTime": "11:00",
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Airport Transfer", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Eco-friendly", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Mountain View", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Guided Ladakh Tours", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Curated Experiences", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Organic Dining", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Concierge Service", "value": true }
+      ],
+      "sameAs": [
+        "https://www.booking.com/",
+        "https://www.airbnb.com/",
+        "https://www.makemytrip.com/"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Himalayan Eco Inn",
+      "image": "https://himalayanecoinn.com/assets/hotel-eco-inn.jpg",
+      "description": "Luxury eco-hotel and homestay in Leh, Ladakh – book your stay and explore curated Ladakh tours, Leh sightseeing, and Himalayan experiences.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Upper Tukcha Rd, near GH road",
@@ -43,7 +97,36 @@
         "addressCountry": "IN"
       },
       "telephone": "+91-60060-24435",
-      "email": "info@himalayanecoinn.com"
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "url": "https://himalayanecoinn.com/",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "telephone": "+91-60060-24435",
+        "email": "info@himalayanecoinn.com"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Himalayan Eco Inn",
+      "url": "https://himalayanecoinn.com/",
+      "description": "Luxury hotel and homestay in Leh, Ladakh – rooms, experiences, and curated Himalayan escapes.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://himalayanecoinn.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
   </script>
 </head>

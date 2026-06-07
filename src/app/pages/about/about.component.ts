@@ -76,5 +76,9 @@ export class AboutComponent {
       keywords:
         'about Himalayan Eco Inn, Leh Ladakh boutique hotel, homestay in Ladakh, eco luxury hotel Leh'
     });
+    this.seo.injectBreadcrumb([
+      { name: 'Home', url: 'https://himalayanecoinn.com/' },
+      { name: 'About', url: 'https://himalayanecoinn.com/about' }
+    ]);
   }
 }

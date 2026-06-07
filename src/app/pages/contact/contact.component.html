@@ -131,7 +131,7 @@
         <h5>Recommended rooms</h5>
         <div class="recommendation-list">
           <a class="recommendation-item" *ngFor="let room of recommendedRooms" routerLink="/rooms">
-            <img [src]="room.image" [alt]="room.name" />
+            <img [src]="room.image" [alt]="room.name" width="80" height="80" loading="lazy" />
             <div>
               <h6>{{ room.name }}</h6>
               <p class="text-muted">{{ room.view }}</p>

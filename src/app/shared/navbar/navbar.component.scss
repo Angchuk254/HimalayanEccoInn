@@ -2,6 +2,7 @@
   box-shadow: 0 12px 30px rgba(21, 24, 34, 0.08);
 }
 
+/* ── Brand ── */
 .navbar-brand .brand-mark {
   background: var(--primary-gradient);
   color: #fff;
@@ -26,9 +27,11 @@
   text-transform: uppercase;
 }
 
+/* ── Nav links ── */
 .nav-link {
   font-weight: 500;
   color: var(--text-base);
+  padding: 0.4rem 0.6rem !important;
 }
 
 .nav-link.active,
@@ -36,6 +39,206 @@
   color: var(--primary);
 }
 
+/* ── Mobile icon button ── */
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0.35rem 0.5rem;
+  font-size: 1.15rem;
+  color: var(--text-base);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+
+  &:hover { color: var(--primary); }
+}
+
+/* ── Desktop search box ── */
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-prefix-icon {
+  position: absolute;
+  left: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.search-field {
+  width: 180px;
+  padding: 0.38rem 0.75rem 0.38rem 2.1rem;
+  border: 1.5px solid #e0e4ef;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  background: #f8f9fc;
+  color: var(--text-base);
+  outline: none;
+  transition: width 0.3s ease, border-color 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    width: 240px;
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  &::placeholder { color: var(--text-muted); }
+  &::-webkit-search-cancel-button { cursor: pointer; }
+}
+
+/* ── Suggestions dropdown ── */
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  min-width: 320px;
+  background: #fff;
+  border: 1px solid #e0e4ef;
+  border-radius: 1rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0;
+  z-index: 1100;
+  overflow: hidden;
+  animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover,
+  &.active {
+    background: #f4f6fb;
+  }
+}
+
+.suggestion-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: var(--bg-soft, #eef0f8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.suggestion-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.suggestion-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-base);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggestion-cat {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.suggestion-footer {
+  padding: 0.55rem 1rem;
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  border-top: 1px solid #f0f2f8;
+  transition: background 0.15s;
+
+  &:hover { background: #f4f6fb; }
+
+  i { margin-right: 0.3rem; }
+  em { font-style: italic; }
+}
+
+/* ── Mobile search bar ── */
+.mobile-search-bar {
+  background: #fff;
+  border-bottom: 1px solid #e8ecf5;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.28s ease, padding 0.28s ease;
+
+  &.open {
+    max-height: 600px;        /* large enough for search bar + full dropdown */
+    overflow: visible;        /* allow suggestions to render below the bar */
+    padding: 0.6rem 0;
+  }
+}
+
+.mobile-search-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f4f6fb;
+  border-radius: 2rem;
+  padding: 0.35rem 0.5rem 0.35rem 1rem;
+}
+
+.mobile-s-icon {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.mobile-search-field {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.92rem;
+  color: var(--text-base);
+  padding: 0.2rem 0;
+
+  &::placeholder { color: var(--text-muted); }
+}
+
+.mobile-suggestions {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  margin-top: 0.5rem;
+  min-width: 0;
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+  animation: dropIn 0.15s ease;
+  z-index: 1200;             /* ensure it renders above page content */
+}
+
+/* ── Mobile offcanvas ── */
 .mobile-offcanvas {
   width: min(82vw, 320px);
 }

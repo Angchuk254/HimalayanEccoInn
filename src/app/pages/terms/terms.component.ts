@@ -13,5 +13,9 @@ export class TermsComponent {
       description: 'Review the booking and stay terms for Himalayan Eco Inn.',
       keywords: 'Himalayan Eco Inn terms, Leh Ladakh hotel policies, room booking terms'
     });
+    this.seo.injectBreadcrumb([
+      { name: 'Home', url: 'https://himalayanecoinn.com/' },
+      { name: 'Terms & Conditions', url: 'https://himalayanecoinn.com/terms' }
+    ]);
   }
 }

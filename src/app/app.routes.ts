@@ -13,6 +13,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { ReviewsComponent } from './pages/reviews/reviews.component';
 import { NearbyComponent } from './pages/nearby/nearby.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SearchComponent } from './pages/search/search.component';
 import { adminGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
@@ -27,6 +28,7 @@ export const routes: Routes = [
   { path: 'nearby', component: NearbyComponent, title: 'Nearby Places | Himalayan Eco Inn' },
   { path: 'privacy-policy', component: PrivacyPolicyComponent, title: 'Privacy Policy | Himalayan Eco Inn' },
   { path: 'terms', component: TermsComponent, title: 'Terms & Conditions | Himalayan Eco Inn' },
+  { path: 'search', component: SearchComponent, title: 'Search | Himalayan Eco Inn' },
   { path: 'admin/login', component: AdminLoginComponent, title: 'Admin Login | Himalayan Eco Inn' },
   {
     path: 'admin',

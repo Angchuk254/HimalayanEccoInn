@@ -18,7 +18,7 @@
     <div class="row g-4">
       <div class="col-sm-6 col-lg-4" *ngFor="let item of items">
         <div class="card gallery-card h-100">
-          <img [src]="item.image" [alt]="item.title" />
+          <img [src]="item.image" [alt]="item.title" width="400" height="300" loading="lazy" />
           <div class="card-body">
             <h6>{{ item.title }}</h6>
           </div>

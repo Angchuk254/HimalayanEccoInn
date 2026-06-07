@@ -7,6 +7,8 @@ import { environment } from '../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class SeoService {
   private readonly baseUrl = environment.baseUrl ?? 'https://himalayanecoinn.com';
+  private readonly siteKeywords =
+    'Ladakh, Leh, Ladakh tours, Leh tours, Ladakh hotel, Ladakh tourism, hotel in Leh Ladakh';
 
   constructor(
     private readonly title: Title,
@@ -25,9 +27,10 @@ export class SeoService {
   }) {
     this.title.setTitle(config.title);
     this.meta.updateTag({ name: 'description', content: config.description });
-    if (config.keywords) {
-      this.meta.updateTag({ name: 'keywords', content: config.keywords });
-    }
+    const mergedKeywords = [config.keywords, this.siteKeywords]
+      .filter(Boolean)
+      .join(', ');
+    this.meta.updateTag({ name: 'keywords', content: mergedKeywords });
     if (config.robots) {
       this.meta.updateTag({ name: 'robots', content: config.robots });
     }
@@ -55,6 +58,26 @@ export class SeoService {
   private getPath(): string {
     const path = this.router.url.split('?')[0];
     return path.startsWith('/') ? path : `/${path}`;
+  }
+
+  injectBreadcrumb(items: Array<{ name: string; url: string }>) {
+    if (!this.document?.head) return;
+    const existing = this.document.head.querySelector('script#breadcrumb-jsonld');
+    if (existing) existing.remove();
+    const script = this.document.createElement('script');
+    script.id = 'breadcrumb-jsonld';
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: items.map((item, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        name: item.name,
+        item: item.url
+      }))
+    });
+    this.document.head.appendChild(script);
   }
 
   private setLinkTag(rel: string, href: string) {

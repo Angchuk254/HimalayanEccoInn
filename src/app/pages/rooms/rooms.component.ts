@@ -25,7 +25,11 @@ export class RoomsComponent {
       description:
         'Discover Himalayan Eco Inn rooms in Leh, Ladakh with mountain views, modern amenities, and homestay-style comfort.',
       keywords:
-        'hotel rooms in Leh, Ladakh rooms and suites, homestay rooms Ladakh, Himalayan Eco Inn amenities'
+        'hotel rooms in Leh, Ladakh rooms and suites, homestay rooms Ladakh, Himalayan Eco Inn amenities, Leh hotel rooms, Ladakh hotel rooms, Ladakh tour stay packages'
     });
+    this.seo.injectBreadcrumb([
+      { name: 'Home', url: 'https://himalayanecoinn.com/' },
+      { name: 'Rooms', url: 'https://himalayanecoinn.com/rooms' }
+    ]);
   }
 }

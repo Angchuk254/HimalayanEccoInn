@@ -188,20 +188,68 @@ export const testimonials: Testimonial[] = [
 
 export const faqs: FaqItem[] = [
   {
-    question: 'What is the check-in and check-out time?',
-    answer: 'Check-in is from 2:00 PM and check-out is by 11:00 AM.'
+    question: 'What is the check-in and check-out time at Himalayan Eco Inn?',
+    answer: 'Check-in is from 2:00 PM and check-out is by 11:00 AM. Early check-in and late check-out can be arranged on request, subject to availability.'
   },
   {
-    question: 'Do you provide airport transfers?',
-    answer: 'Yes, airport transfers can be arranged on request.'
+    question: 'Do you provide airport transfers from Kushok Bakula Rimpochhe Airport?',
+    answer: 'Yes, we offer airport transfers from Leh Airport (IXL) on request. Please inform us of your flight details at least 24 hours in advance.'
   },
   {
-    question: 'Is the property suitable for families?',
-    answer: 'Yes, we have family-friendly rooms and tailored activities for kids.'
+    question: 'Is the property suitable for families with children?',
+    answer: 'Yes, Himalayan Eco Inn is family-friendly. We have spacious rooms, tailored activities for kids, and a warm, welcoming environment for all ages.'
   },
   {
-    question: 'How do you support eco-friendly stays?',
-    answer: 'We focus on local sourcing, reduced plastic, and energy-efficient systems.'
+    question: 'How do you support eco-friendly stays in Ladakh?',
+    answer: 'We focus on local sourcing from Ladakhi farmers and artisans, reduced single-use plastic, solar energy use, and water conservation practices rooted in Leh\'s environment.'
+  },
+  {
+    question: 'What is the best time to visit Leh Ladakh?',
+    answer: 'The best time to visit Leh, Ladakh is from April to October. Summers (June–August) offer warm weather and access to Nubra Valley, Pangong Lake, and Zanskar. May and September are ideal for fewer crowds and pleasant temperatures.'
+  },
+  {
+    question: 'How do I get to Leh Ladakh?',
+    answer: 'Leh is accessible by air via Kushok Bakula Rimpochhe Airport (IXL) with daily flights from Delhi, Mumbai, and other cities. The Manali–Leh and Srinagar–Leh highways open seasonally (May–October). We can assist with route planning.'
+  },
+  {
+    question: 'Do I need permits to visit Ladakh?',
+    answer: 'Indian nationals do not require inner-line permits for Leh city. Permits are required for protected areas like Nubra Valley, Pangong Lake, Tso Moriri, and Dah-Hanu. Foreign nationals need an Inner Line Permit (ILP) for restricted areas. Our concierge can assist with permit arrangements.'
+  },
+  {
+    question: 'What is the altitude of Leh and should I worry about altitude sickness?',
+    answer: 'Leh is situated at approximately 3,524 meters (11,562 ft) above sea level. We recommend resting for the first 24–48 hours, staying well hydrated, and avoiding strenuous activity. Our staff provides acclimatization guidance and can arrange medical assistance if needed.'
+  },
+  {
+    question: 'What tours and travel packages are available near Himalayan Eco Inn?',
+    answer: 'Our concierge curates day trips and multi-day tours to Pangong Lake, Nubra Valley, Zanskar, Hemis, Thiksey Monastery, Shey Palace, Magnetic Hill, and more. We work with licensed Ladakhi drivers and guides to ensure a safe, enriching experience.'
+  },
+  {
+    question: 'Can I book a Ladakh tour package from Himalayan Eco Inn?',
+    answer: 'Yes. We offer customised Ladakh travel packages including monastery circuits, high-altitude lake tours, village walks, and cultural experiences. Contact our concierge to design your personal itinerary.'
+  },
+  {
+    question: 'What rooms are available at Himalayan Eco Inn?',
+    answer: 'We offer Alpine Deluxe Rooms (from ₹7,500/night) with mountain and monastery views, and Heritage Suites (from ₹11,500/night) with valley views and a private lounge. All rooms include eco-friendly amenities and modern comforts.'
+  },
+  {
+    question: 'Is Wi-Fi available at the hotel?',
+    answer: 'Yes, high-speed Wi-Fi is available in all rooms and common areas. It is complimentary for all guests.'
+  },
+  {
+    question: 'Do you offer vegetarian or Ladakhi cuisine at the hotel?',
+    answer: 'Yes, our dining lounge serves traditional Ladakhi dishes, seasonal organic produce from local farms, and a wide selection of vegetarian and vegan options. We can accommodate dietary preferences with advance notice.'
+  },
+  {
+    question: 'How far is Himalayan Eco Inn from Shanti Stupa?',
+    answer: 'Himalayan Eco Inn is approximately 1.5 km from Shanti Stupa — around a 5-minute drive. Leh Palace and the main market are also within easy reach, making it a convenient base for exploring Leh.'
+  },
+  {
+    question: 'Is Himalayan Eco Inn a good base for Leh sightseeing?',
+    answer: 'Yes. Our location in Upper Tukcha, Leh puts you within easy reach of Leh Palace, Shanti Stupa, Namgyal Tsemo Monastery, the main bazaar, and departure points for Nubra, Pangong, and Zanskar trips.'
+  },
+  {
+    question: 'What is the cancellation policy?',
+    answer: 'Cancellations made 48 hours or more before check-in receive a full refund. Late cancellations or no-shows are subject to a one-night charge. Please contact us directly for group or long-stay bookings.'
   }
 ];
 

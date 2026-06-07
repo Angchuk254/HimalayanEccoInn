@@ -44,8 +44,12 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
       description:
         'Explore dining, wellness, cultural walks, and outdoor adventures curated by Himalayan Eco Inn in Leh, Ladakh.',
       keywords:
-        'Ladakh experiences, Leh dining, Himalayan Eco Inn activities, hotel in Leh Ladakh, Ladakh homestay'
+        'Ladakh experiences, Leh dining, Himalayan Eco Inn activities, hotel in Leh Ladakh, Ladakh homestay, Ladakh tours, Leh sightseeing tours'
     });
+    this.seo.injectBreadcrumb([
+      { name: 'Home', url: 'https://himalayanecoinn.com/' },
+      { name: 'Experience', url: 'https://himalayanecoinn.com/experience' }
+    ]);
   }
 
   ngAfterViewInit() {

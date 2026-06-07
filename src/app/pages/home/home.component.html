@@ -27,18 +27,27 @@
                 <img
                   src="assets/eco-inne-hotel.jpg"
                   alt="Himalayan Eco Inn exterior"
+                  width="600"
+                  height="400"
+                  loading="eager"
                 />
               </div>
               <div class="carousel-item">
                 <img
                   src="assets/eco-inn-dine.jpg"
                   alt="Himalayan Eco Inn suite"
+                  width="600"
+                  height="400"
+                  loading="lazy"
                 />
               </div>
               <div class="carousel-item">
                 <img
                   src="assets/eco-inn-room.jpg"
                   alt="Himalayan Eco Inn landscape"
+                  width="600"
+                  height="400"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -85,6 +94,9 @@
           class="img-fluid rounded-4 shadow"
           src="assets/room-eco-inn.jpg"
           alt="Himalayan Eco Inn hotel in Leh Ladakh"
+          width="400"
+          height="300"
+          loading="lazy"
         />
       </div>
     </div>
@@ -141,7 +153,7 @@
     <div class="row g-4">
       <div class="col-md-6 col-lg-4" *ngFor="let room of rooms">
         <div class="card room-card h-100">
-          <img [src]="room.image" [alt]="room.name" />
+          <img [src]="room.image" [alt]="room.name" width="360" height="270" loading="lazy" />
           <div class="card-body">
             <div class="d-flex align-items-start justify-content-between gap-2">
               <div>
@@ -173,7 +185,7 @@
     <div class="row g-4">
       <div class="col-md-6 col-lg-3" *ngFor="let item of galleryPreview">
         <div class="card gallery-card h-100">
-          <img [src]="item.image" [alt]="item.title" />
+          <img [src]="item.image" [alt]="item.title" width="400" height="300" loading="lazy" />
           <div class="card-body">
             <h6>{{ item.title }}</h6>
           </div>

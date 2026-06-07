@@ -43,8 +43,12 @@ export class ContactComponent {
       description:
         'Contact Himalayan Eco Inn to book hotel rooms or a homestay-style stay in Leh, Ladakh.',
       keywords:
-        'contact Himalayan Eco Inn, Leh hotel booking, Ladakh room booking, homestay in Leh, Ladakh concierge'
+        'contact Himalayan Eco Inn, Leh hotel booking, Ladakh room booking, homestay in Leh, Ladakh concierge, Ladakh tours, Leh tour bookings'
     });
+    this.seo.injectBreadcrumb([
+      { name: 'Home', url: 'https://himalayanecoinn.com/' },
+      { name: 'Contact', url: 'https://himalayanecoinn.com/contact' }
+    ]);
   }
 
   async submit() {

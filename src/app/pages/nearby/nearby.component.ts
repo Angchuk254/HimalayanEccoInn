@@ -23,6 +23,10 @@ export class NearbyComponent {
       keywords:
         'Leh nearby places, Ladakh monasteries, Leh restaurants, things to do in Leh, Ladakh hotel location'
     });
+    this.seo.injectBreadcrumb([
+      { name: 'Home', url: 'https://himalayanecoinn.com/' },
+      { name: 'Nearby Places', url: 'https://himalayanecoinn.com/nearby' }
+    ]);
   }
 
   setCategory(category: (typeof this.categories)[number]) {

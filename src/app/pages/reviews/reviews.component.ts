@@ -26,5 +26,9 @@ export class ReviewsComponent {
       keywords:
         'Himalayan Eco Inn reviews, Leh Ladakh guest reviews, hotel testimonials, homestay in Leh'
     });
+    this.seo.injectBreadcrumb([
+      { name: 'Home', url: 'https://himalayanecoinn.com/' },
+      { name: 'Reviews', url: 'https://himalayanecoinn.com/reviews' }
+    ]);
   }
 }

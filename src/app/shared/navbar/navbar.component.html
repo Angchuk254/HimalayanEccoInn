@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-shadow sticky-top">
   <div class="container">
+    <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
       <span class="brand-mark">HEI</span>
       <span class="brand-text">
@@ -7,18 +8,36 @@
         <small>Leh, Ladakh</small>
       </span>
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#mobileNav"
-      aria-controls="mobileNav"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
+    <!-- Right controls (mobile) -->
+    <div class="d-flex align-items-center gap-2 d-lg-none ms-auto">
+      <!-- Mobile search toggle -->
+      <button
+        class="icon-btn"
+        type="button"
+        (click)="toggleMobileSearch()"
+        [attr.aria-expanded]="searchOpen"
+        aria-label="Toggle search"
+        id="mobile-search-toggle"
+      >
+        <i class="bi" [class.bi-search]="!searchOpen" [class.bi-x-lg]="searchOpen"></i>
+      </button>
+      <!-- Hamburger -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#mobileNav"
+        aria-controls="mobileNav"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <!-- Desktop nav -->
     <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
         <li class="nav-item">
           <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
@@ -34,16 +53,59 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/gallery" routerLinkActive="active">Gallery</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" routerLink="/reviews" routerLinkActive="active">Reviews</a>
+
+        <!-- Desktop search -->
+        <li class="nav-item navbar-search-wrap ms-lg-2" role="search">
+          <div class="search-box">
+            <i class="bi bi-search search-prefix-icon"></i>
+            <input
+              #searchInputRef
+              id="navbar-search"
+              type="search"
+              class="search-field"
+              [(ngModel)]="searchQuery"
+              (input)="onSearchInput()"
+              (keydown)="onSearchKeydown($event)"
+              (focus)="onSearchInput()"
+              placeholder="Search…"
+              autocomplete="off"
+              aria-label="Search site"
+              aria-autocomplete="list"
+              [attr.aria-expanded]="showSuggestions"
+              aria-controls="search-suggestions"
+            />
+
+            <!-- Suggestions dropdown -->
+            <ul
+              *ngIf="showSuggestions"
+              id="search-suggestions"
+              class="suggestions-dropdown"
+              role="listbox"
+            >
+              <li
+                *ngFor="let item of suggestions; let i = index"
+                class="suggestion-item"
+                [class.active]="i === activeSuggestionIndex"
+                role="option"
+                [attr.aria-selected]="i === activeSuggestionIndex"
+                (mousedown)="selectSuggestion(item)"
+              >
+                <span class="suggestion-icon">
+                  <i class="bi" [class]="item.icon"></i>
+                </span>
+                <span class="suggestion-body">
+                  <span class="suggestion-title">{{ item.title }}</span>
+                  <span class="suggestion-cat">{{ item.category }}</span>
+                </span>
+              </li>
+              <li class="suggestion-footer" (mousedown)="submitSearch()">
+                <i class="bi bi-search"></i> See all results for "<em>{{ searchQuery }}</em>"
+              </li>
+            </ul>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/faq" routerLinkActive="active">FAQ</a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
-        </li> -->
-        <li class="nav-item ms-lg-2">
+
+        <li class="nav-item ms-lg-1">
           <a class="btn btn-primary btn-sm px-4" routerLink="/contact">Book Now</a>
         </li>
       </ul>
@@ -51,6 +113,49 @@
   </div>
 </nav>
 
+<!-- Mobile search bar (slides in below navbar) -->
+<div class="mobile-search-bar" [class.open]="searchOpen" role="search">
+  <div class="container">
+    <div class="navbar-search-wrap mobile-search-inner">
+      <i class="bi bi-search mobile-s-icon"></i>
+      <input
+        #searchInputRef
+        id="mobile-navbar-search"
+        type="search"
+        class="mobile-search-field"
+        [(ngModel)]="searchQuery"
+        (input)="onSearchInput()"
+        (keydown)="onSearchKeydown($event)"
+        placeholder="Search rooms, experiences, FAQs…"
+        autocomplete="off"
+        aria-label="Search site"
+      />
+      <button class="btn btn-primary btn-sm" type="button" (click)="submitSearch()">Go</button>
+    </div>
+
+    <!-- Mobile suggestions -->
+    <ul *ngIf="showSuggestions && searchOpen" class="suggestions-dropdown mobile-suggestions" role="listbox">
+      <li
+        *ngFor="let item of suggestions; let i = index"
+        class="suggestion-item"
+        [class.active]="i === activeSuggestionIndex"
+        role="option"
+        (mousedown)="selectSuggestion(item)"
+      >
+        <span class="suggestion-icon"><i class="bi" [class]="item.icon"></i></span>
+        <span class="suggestion-body">
+          <span class="suggestion-title">{{ item.title }}</span>
+          <span class="suggestion-cat">{{ item.category }}</span>
+        </span>
+      </li>
+      <li class="suggestion-footer" (mousedown)="submitSearch()">
+        <i class="bi bi-search"></i> All results for "<em>{{ searchQuery }}</em>"
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Mobile offcanvas menu -->
 <div
   class="offcanvas offcanvas-start mobile-offcanvas"
   tabindex="-1"

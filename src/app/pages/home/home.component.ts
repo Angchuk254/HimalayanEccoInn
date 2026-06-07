@@ -42,7 +42,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
       description:
         'Himalayan Eco Inn is a luxury hotel and homestay-style retreat in Leh, Ladakh with elegant rooms and curated experiences.',
       keywords:
-        'hotel in Leh Ladakh, homestay in Leh, Himalayan Eco Inn, luxury rooms in Ladakh, eco hotel Leh, Leh hotel booking',
+        'hotel in Leh Ladakh, homestay in Leh, Himalayan Eco Inn, luxury rooms in Ladakh, eco hotel Leh, Leh hotel booking, Ladakh tours, Leh tour packages, Leh sightseeing tours',
       image: 'https://himalayanecoinn.com/assets/hotel-eco-inn.jpg'
     });
   }

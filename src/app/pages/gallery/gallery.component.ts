@@ -21,5 +21,9 @@ export class GalleryComponent {
       keywords:
         'Himalayan Eco Inn gallery, Leh Ladakh hotel photos, rooms and dining, homestay in Leh'
     });
+    this.seo.injectBreadcrumb([
+      { name: 'Home', url: 'https://himalayanecoinn.com/' },
+      { name: 'Gallery', url: 'https://himalayanecoinn.com/gallery' }
+    ]);
   }
 }

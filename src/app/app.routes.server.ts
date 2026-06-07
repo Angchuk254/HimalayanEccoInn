@@ -12,6 +12,7 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'nearby', renderMode: RenderMode.Prerender },
   { path: 'privacy-policy', renderMode: RenderMode.Prerender },
   { path: 'terms', renderMode: RenderMode.Prerender },
+  { path: 'search', renderMode: RenderMode.Client },
   { path: 'admin/login', renderMode: RenderMode.Client },
   { path: 'admin/**', renderMode: RenderMode.Client },
   { path: '**', renderMode: RenderMode.Prerender }
